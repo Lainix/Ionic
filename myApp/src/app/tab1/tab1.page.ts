@@ -8,58 +8,37 @@ import { Component } from '@angular/core';
 export class Tab1Page {
 
   constructor() {
-    var request = new XMLHttpRequest();
-    request.open('GET', 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-08-19&sortBy=publishedAt&apiKey=1afbdd2fe7d34a098dcd4e363b4b674e', true);
-    request.onload = function () {
-      const app = document.getElementById('root');
-
-      const containe = document.createElement('div');
-      containe.setAttribute('class', 'container');
+    function validar(){
+      var nombre = document.getElementById("nombre").nodeValue;
+      var apellido = document.getElementById("apellido").nodeValue;
+      var correo = document.getElementById("correo").nodeValue;
+      var clave = document.getElementById("clave").nodeValue;
+      var expresion = /\w+@\w+\.+[a-z]/;
   
-      console.log(app);
-      app.appendChild(containe);
-
-  // Begin accessing JSON data here
- 
-      var data = JSON.parse(this.response);
-      console.log(data);
-      if (request.status >= 200 && request.status < 400) {
-        Object.keys(data.articles).forEach(articles => {
-          const card = document.createElement('div');
-          card.setAttribute('class', 'card');
-
-          console.log(articles);
-          const logo = document.createElement('img') 
-          logo.src = data.articles[articles].urlToImage;
-    
-          const h1 = document.createElement('ion-card-subtitle');
-          h1.textContent = data.articles[articles].source.name;
-          console.log(h1);
-
-          const title = document.createElement('ion-card-title');
-          title.textContent = data.articles[articles].title;
-          console.log(title);
-
-          const p = document.createElement('ion-card-content');
-          data.articles[articles].description = data.articles[articles].description.substring(0, 300);
-          p.textContent = `${data.articles[articles].description}...`;
-
-          containe.appendChild(card);
-          card.appendChild(logo);
-          card.appendChild(h1);
-          card.appendChild(title);
-          card.appendChild(p);
-    });
-  } else {
-    const errorMessage = document.createElement('marquee');
-    errorMessage.textContent = `Gah, it's not working!`;
-    app.appendChild(errorMessage);
-  }
-}
-
-request.send();
-  }
-
-  
+      if(nombre == "" || apellido == "" || correo == "" || clave == ""){
+          alert("Campos están vacío");
+          return false;
+      }
+      else if(nombre.length > 30){
+          alert("El nombre es muy largo");
+          return false;
+      }
+      else if(apellido.length > 80){
+          alert("El apellidos es muy largo");
+          return false;
+      }
+      else if(correo.length > 20){
+          alert("El correo debe tener 20 caracteres como máximo");
+          return false;
+      }
+      else if(!expresion.test(correo)){
+          alert("el correo no es válido")
+      }
+      else(clave.length > 20);
+          alert("La clave debe tener 20 caracteres como máximo");
+          return false;
+      
+   }
+  }  
 
 }

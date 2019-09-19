@@ -1,31 +1,5 @@
-//.welcome-card img {
-//  max-height: 35vh;
-//  overflow: hidden;
-//}
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: 1rem;
-  border: 1px solid gray;
-}
-
-@media screen and (min-width: 600px) {
-  .card {
-    flex: 1 1 calc(50% - 2rem);
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .card {
-    flex: 1 1 calc(33% - 2rem);
-  }
-}

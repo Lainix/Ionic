@@ -9,7 +9,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-card id="root"> Inicio
-      
-    </ion-card>
+    <h1>Login</h1>
+    <form action="/src/app/tab2/tab2.page.html" method="post" class="form-register" onsubmit="return validar();">
+        <h2 class="form__titulo">Crea una Cuenta</h2>
+        <div class="contenedor-inputs">
+            <input type="text" name="nombre" placeholder="Nombre" class="input-48">
+            <input type="text" name="apellidos" placeholder="Apellidos" class="input-48">
+            <input type="text" name="correo" placeholder="Correo" class="input-100">
+            <input type="password" name="clave" placeholder="Contraseña" class="input-100">
+            <input type="submit" value="Registrar" class="btn-enviar">
+            <p class="form_link">¿Ya tienes una cuenta? <a href="#">Ingresa aquí</a></p>
+        </div>
+    </form>
 </ion-content>
