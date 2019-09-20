@@ -29,25 +29,33 @@ export class Tab2Page {
           const card = document.createElement('div');
           card.setAttribute('class', 'card');
 
-          console.log(articles);
+          const header = document.createElement('ion-header');
+          const tol = document.createElement('ion-toolbar');
+          const titles = document.createElement('ion-title');
+          const conte = document.createElement('ion-content');
+          const car = document.createElement('ion-card');
+          
           const logo = document.createElement('img') 
           logo.src = data.articles[articles].urlToImage;
     
-          const h1 = document.createElement('ion-card-subtitle');
-          h1.textContent = data.articles[articles].source.name;
-          console.log(h1);
-
+          const heade = document.createElement('ion-card-header');
+          const sub = document.createElement('ion-card-subtitle');
+          sub.textContent = data.articles[articles].source.name;
           const title = document.createElement('ion-card-title');
           title.textContent = data.articles[articles].title;
-          console.log(title);
-
           const p = document.createElement('ion-card-content');
           data.articles[articles].description = data.articles[articles].description.substring(0, 300);
           p.textContent = `${data.articles[articles].description}...`;
 
           containe.appendChild(card);
+          card.appendChild(header);
+          card.appendChild(tol);
+          card.appendChild(titles);
+          card.appendChild(conte);
+          card.appendChild(car);          
           card.appendChild(logo);
-          card.appendChild(h1);
+          card.appendChild(heade);
+          card.appendChild(sub);
           card.appendChild(title);
           card.appendChild(p);
     });
