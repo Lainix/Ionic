@@ -49,6 +49,7 @@ const routes: Routes = [
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   },
+  // Repeti la ruta de la tab dos para que el boton de Login me dirija a la Tab2 donde esta la api
   {
     path: 'segunda',
     loadChildren: () =>

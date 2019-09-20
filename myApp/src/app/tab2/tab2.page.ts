@@ -9,6 +9,7 @@ export class Tab2Page {
 
   constructor() {
     
+    // Call api
     var request = new XMLHttpRequest();
     request.open('GET', 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-08-19&sortBy=publishedAt&apiKey=1afbdd2fe7d34a098dcd4e363b4b674e', true);
     request.onload = function () {
@@ -29,6 +30,7 @@ export class Tab2Page {
           const card = document.createElement('div');
           card.setAttribute('class', 'card');
 
+          // Create Element´s
           const header = document.createElement('ion-header');
           const tol = document.createElement('ion-toolbar');
           const titles = document.createElement('ion-title');
@@ -47,6 +49,7 @@ export class Tab2Page {
           data.articles[articles].description = data.articles[articles].description.substring(0, 300);
           p.textContent = `${data.articles[articles].description}...`;
 
+          // create card
           containe.appendChild(card);
           card.appendChild(header);
           card.appendChild(tol);
